@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { debounce } from "debounce";
+import PropTypes from "prop-types";
 
 const Filter = ({ onFilter }) => {
   const [filter, setFilter] = useState("");
@@ -25,6 +25,10 @@ const Filter = ({ onFilter }) => {
       />
     </div>
   );
+};
+
+Filter.propTypes = {
+  onFilter: PropTypes.func.isRequired,
 };
 
 export default Filter;
