@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 const Filter = ({ onFilter }) => {
   const [filter, setFilter] = useState("");
 
-  const handleInputChange = (event) => {
-    setFilter(event.target.value);
+  const handleInputChange = ({ value }) => {
+    setFilter(value);
   };
 
   const filterInputHandler = (event) => {
-    handleInputChange(event);
-    onFilter(event);
+    handleInputChange(event.target);
+    onFilter(event.target.value);
   };
 
   return (
@@ -21,7 +21,6 @@ const Filter = ({ onFilter }) => {
         name="filter"
         value={filter}
         onChange={filterInputHandler}
-        // onBlur={() => setFilter("")}
       />
     </div>
   );
